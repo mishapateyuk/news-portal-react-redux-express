@@ -25,7 +25,11 @@ export default {
           path.join(__dirname, 'client'),
         ],
         loader: ["react-hot-loader", "babel-loader"],
-      }
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
     ],
   },
   resolve: {
