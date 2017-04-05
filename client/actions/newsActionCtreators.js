@@ -5,7 +5,7 @@ import {jsonAJAX} from '../services/AJAX.js';
 const addNews = (dataInfo) =>
   (dispatch) => {
     dispatch({type: newsAreChangedType});
-    addArticle(dataInfo)
+    jsonAJAX('post', '/api/addNews', JSON.stringify(dataInfo))
       .then(() => dispatch(loadNews()));
 };
 

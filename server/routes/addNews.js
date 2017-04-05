@@ -4,13 +4,16 @@ import fs from 'fs';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-
+router.post('/', (req, res) => {
   fs.readFile(path.join(__dirname,'../storage/news.json'), 'utf8', (err, data) => {
     if (err) {
       console.log(err);
     } else {
-      res.send(data);
+      const news = JSON.parse(data);
+      news.push(req.body);
+      const jsonNews = JSON.stringify(news);
+      fs.writeFile(path.join(__dirname,'../storage/news.json'), jsonNews);
+      res.status(200).json();
     };
   });
 });

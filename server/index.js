@@ -7,8 +7,8 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
 
-import getNews from './routes/getNews.js';
-import addNews from './routes/addNews.js';
+import getNews from './routes/getNews';
+import addNews from './routes/addNews';
 
 let app = express();
 

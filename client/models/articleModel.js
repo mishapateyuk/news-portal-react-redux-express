@@ -6,18 +6,9 @@ function getArticles() {
   });
 };
 
-function addArticle({id, title, author, tags, publishDate, shortDescription, fullDescription}) {
+function addArticle(article) {
   return new Promise((resolve, reject) => {
     setTimeout(()=> {
-      const article = {
-        id,
-        title,
-        author,
-        tags,
-        publishDate,
-        shortDescription,
-        fullDescription,
-      };
       articles.push(article);
       localStorage.setItem(
         'news',

@@ -9,7 +9,7 @@ export const jsonAJAX = (method, address, body=null) => {
       if (xhr.status === 200) {
         resolve(xhr.responseText);
       } else {
-        reject();
+        reject(xhr.status);
       };
     };
   });
