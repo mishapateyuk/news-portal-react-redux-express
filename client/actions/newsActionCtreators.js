@@ -1,4 +1,3 @@
-import {addArticle, getArticles, deleteArticle, editArticle} from '../models/articleModel';
 import {newsAreChangedType, loadNewsType, applyFiltersType} from '../constants/constants';
 import {jsonAJAX} from '../services/AJAX.js';
 
