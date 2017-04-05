@@ -1,8 +1,8 @@
 import React from 'react';
 import Select from './Select.react';
 import { getTags } from '../models/tagsModel.js';
-import { newId } from '../models/articleModel.js';
 import { withRouter } from 'react-router';
+import uuidV4Js from 'uuid-v4.js';
 
 class NewsForm extends React.PureComponent {
 
@@ -24,7 +24,7 @@ class NewsForm extends React.PureComponent {
 
   getNewsInfo() {
     const tags = this.state.tags.map((tag) => tag.value);
-    this.id = this.props.id || newId();
+    this.id = this.props.id || uuidV4Js();
     const newsInfo = {
       id: this.id,
       author: this.props.author,

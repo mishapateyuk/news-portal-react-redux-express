@@ -22,7 +22,7 @@ function addArticle(article) {
 function editArticle(dataInfo) {
   return new Promise((resolve, reject) => {
     setTimeout(()=> {
-      let article = articles.find((item) => item.id == dataInfo.id);
+      let article = articles.find((item) => item.id === dataInfo.id);
       article = Object.assign(article, dataInfo);
       localStorage.setItem(
         'news',
@@ -36,7 +36,7 @@ function editArticle(dataInfo) {
 function deleteArticle(id) {
   return new Promise((resolve, reject) => {
     setTimeout(()=> {
-      const article = articles.find((item) => item.id == id);
+      const article = articles.find((item) => item.id === id);
       const index = articles.indexOf(article);
       articles.splice(index, 1);
       localStorage.setItem(

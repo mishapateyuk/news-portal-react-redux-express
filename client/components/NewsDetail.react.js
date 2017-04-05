@@ -18,7 +18,7 @@ class NewsDetails extends React.PureComponent {
         </div>
       );
     } else {
-      const currentNews = this.props.news.find((item) => item.id == id);
+      const currentNews = this.props.news.find((item) => item.id === id);
       return (
         <div className="newsWrapper">
           <p>

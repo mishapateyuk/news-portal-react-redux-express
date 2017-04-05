@@ -27,7 +27,7 @@ class EditNews extends React.PureComponent {
       );
     } else {
       const id = this.props.params.id;
-      const editingNews = this.props.news.find((item) => item.id == id);
+      const editingNews = this.props.news.find((item) => item.id === id);
       const {title, author, shortDescription, fullDescription, tags} = editingNews;
       const _tags = tags.map((tag) => ({value: tag, label: tag,}));
       return (

@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
         console.log(err);
       } else {
         const news = JSON.parse(data);
-        const article = news.find(item => item.id == req.body.id);
+        const article = news.find(item => item.id === req.body.id);
         const index = news.indexOf(article);
         news.splice(index, 1);
         const jsonNews = JSON.stringify(news);
