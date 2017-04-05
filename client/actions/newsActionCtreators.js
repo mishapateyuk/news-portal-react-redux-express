@@ -1,5 +1,6 @@
 import {addArticle, getArticles, deleteArticle, editArticle} from '../models/articleModel';
-import {newsAreChangedType, loadNewsType, applyFiltersType} from '../constants/constants.js';
+import {newsAreChangedType, loadNewsType, applyFiltersType} from '../constants/constants';
+import {jsonAJAX} from '../services/AJAX.js';
 
 const addNews = (dataInfo) =>
   (dispatch) => {
@@ -9,11 +10,11 @@ const addNews = (dataInfo) =>
 };
 
 const loadNews = () => (dispatch) => {
-  return getArticles()
+  return jsonAJAX('get', '/api/getNews')
     .then(
         (response) => dispatch({
           type: loadNewsType,
-          news: response,
+          news: JSON.parse(response),
         })
       );
 };

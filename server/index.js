@@ -7,6 +7,8 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
 
+import getNews from './routes/getNews.js';
+import addNews from './routes/addNews.js';
 
 let app = express();
 
@@ -14,6 +16,8 @@ app.use(bodyParser.json());
 
 
 //-----routes-------------------------------------------------------------------
+app.use('/api/getNews', getNews);
+app.use('/api/addNews', addNews);
 //-----end-routes---------------------------------------------------------------
 
 const compiler = webpack(webpackConfig);
