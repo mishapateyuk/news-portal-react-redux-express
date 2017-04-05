@@ -13,8 +13,10 @@ router.post('/', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        const news = JSON.parse(data || "[]");
-        news.push(req.body);
+        const news = JSON.parse(data);
+        const article = news.find(item => item.id == req.body.id);
+        const index = news.indexOf(article);
+        news.splice(index, 1);
         const jsonNews = JSON.stringify(news);
         fs.writeFile(
           newsPath,

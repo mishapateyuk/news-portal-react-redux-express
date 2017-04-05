@@ -9,15 +9,18 @@ import webpackConfig from '../webpack.config.dev';
 
 import getNews from './routes/getNews';
 import addNews from './routes/addNews';
+import editNews from './routes/editNews';
+import deleteNews from './routes/deleteNews';
 
 let app = express();
 
 app.use(bodyParser.json());
 
-
 //-----routes-------------------------------------------------------------------
 app.use('/api/getNews', getNews);
 app.use('/api/addNews', addNews);
+app.use('/api/editNews', editNews);
+app.use('/api/deleteNews', deleteNews);
 //-----end-routes---------------------------------------------------------------
 
 const compiler = webpack(webpackConfig);
