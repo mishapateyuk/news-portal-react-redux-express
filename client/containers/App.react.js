@@ -45,4 +45,8 @@ class App extends React.PureComponent {
   };
 };
 
+App.propTypes = {
+  user: React.PropTypes.string,
+};
+
 export default connect(mapStateToProps, null)(App);

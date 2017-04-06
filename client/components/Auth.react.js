@@ -44,4 +44,11 @@ class Auth extends React.PureComponent {
   };
 };
 
+
+Auth.propTypes = {
+  auth: React.PropTypes.func,
+  hideModal: React.PropTypes.func,
+  message:  React.PropTypes.string,
+};
+
 export default connect(mapStateToProps, mapActionsToProps)(Auth);

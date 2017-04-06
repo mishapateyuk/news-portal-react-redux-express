@@ -37,4 +37,9 @@ class NewsList extends React.PureComponent {
   };
 };
 
+NewsList.propTypes = {
+  news: React.PropTypes.array,
+  showModal: React.PropTypes.func,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(NewsList);

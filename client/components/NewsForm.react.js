@@ -88,4 +88,15 @@ class NewsForm extends React.PureComponent {
   };
 };
 
+NewsForm.propTypes = {
+  clickHandler: React.PropTypes.func,
+  tags: React.PropTypes.array,
+  title: React.PropTypes.string,
+  author: React.PropTypes.string,
+  publishDate: React.PropTypes.string,
+  shortDescription: React.PropTypes.string,
+  fullDescription: React.PropTypes.string,
+  buttonText: React.PropTypes.string,
+};
+
 export default withRouter(NewsForm);

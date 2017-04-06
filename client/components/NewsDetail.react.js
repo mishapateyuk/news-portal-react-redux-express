@@ -42,4 +42,8 @@ class NewsDetails extends React.PureComponent {
   };
 };
 
+NewsDetails.propTypes = {
+  news: React.PropTypes.array,
+};
+
 export default connect(mapStateToProps, null)(NewsDetails);

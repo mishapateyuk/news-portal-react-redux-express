@@ -31,4 +31,8 @@ class RemoveNews extends React.PureComponent {
   };
 };
 
+RemoveNews.propTypes = {
+  removeNews: React.PropTypes.func,
+};
+
 export default connect(null, mapDispatchToProps)(withRouter(RemoveNews));

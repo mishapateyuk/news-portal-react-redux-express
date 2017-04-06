@@ -8,7 +8,6 @@ import {hideModal} from '../actions/modalActionCreators.js';
 import {filterNews} from '../actions/newsActionCtreators';
 
 const mapStateToProps = ({news}) => ({
-  news: news.all,
   filtersSettings: news.filtersSettings,
 });
 
@@ -111,6 +110,12 @@ class Filters extends React.PureComponent {
       </div>
     );
   };
+};
+
+Filters.propTypes = {
+  filtersSettings: React.PropTypes.object,
+  hideModal: React.PropTypes.func,
+  applyFilter: React.PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Filters);

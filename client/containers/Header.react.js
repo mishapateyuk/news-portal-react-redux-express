@@ -38,4 +38,10 @@ class Header extends React.PureComponent {
   };
 };
 
+Header.propTypes = {
+  user: React.PropTypes.string,
+  showModal: React.PropTypes.func,
+  logOut: React.PropTypes.func,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

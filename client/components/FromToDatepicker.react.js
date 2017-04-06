@@ -8,7 +8,7 @@ function disabledDate(value) {
   return value > new Date() ? true : false;
 };
 
-export default class FromToDatepicker extends React.PureComponent {
+class FromToDatepicker extends React.PureComponent {
   constructor(props) {
     super(props);
     this.fromHandler = this.props.fromHandler;
@@ -63,3 +63,13 @@ export default class FromToDatepicker extends React.PureComponent {
     );
   };
 };
+
+FromToDatepicker.propTypes = {
+  fromHandler: React.PropTypes.func,
+  fromTime:  React.PropTypes.func,
+  toTime: React.PropTypes.func,
+  onChangeDateFrom:  React.PropTypes.func,
+  onChangeDateTo:  React.PropTypes.func,
+};
+
+export default FromToDatepicker;

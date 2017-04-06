@@ -34,4 +34,9 @@ class AddNews extends React.PureComponent {
   };
 };
 
+AddNews.propTypes = {
+  author: React.PropTypes.string,
+  addNews: React.PropTypes.func,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(AddNews);

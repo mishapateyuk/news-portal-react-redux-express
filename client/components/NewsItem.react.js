@@ -47,4 +47,9 @@ class NewsItem extends React.PureComponent {
   };
 };
 
+NewsItem.propTypes = {
+  user: React.PropTypes.string,
+  newsData: React.PropTypes.object,
+};
+
 export default connect(mapStateToProps, null)(NewsItem);

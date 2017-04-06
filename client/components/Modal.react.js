@@ -20,4 +20,8 @@ class Modal extends React.PureComponent {
   };
 };
 
+Modal.propTypes = {
+  hideModal: React.PropTypes.func,
+};
+
 export default connect(null, mapActionsToProps)(Modal);

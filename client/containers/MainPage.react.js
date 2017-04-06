@@ -51,4 +51,10 @@ class MainPage extends React.PureComponent {
   };
 };
 
+MainPage.propTypes = {
+  user: React.PropTypes.string,
+  news: React.PropTypes.array,
+  loadNews: React.PropTypes.func,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

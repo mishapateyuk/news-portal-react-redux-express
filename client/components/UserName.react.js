@@ -12,4 +12,8 @@ class UserName extends React.PureComponent {
   };
 };
 
+UserName.propTypes = {
+  user: React.PropTypes.string,
+};
+
 export default UserName;

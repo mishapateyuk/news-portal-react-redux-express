@@ -47,4 +47,9 @@ class EditNews extends React.PureComponent {
   };
 };
 
+EditNews.propTypes = {
+  news: React.PropTypes.array,
+  editNews: React.PropTypes.func,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(EditNews);
