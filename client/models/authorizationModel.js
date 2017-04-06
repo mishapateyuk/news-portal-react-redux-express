@@ -9,8 +9,7 @@ function checkAuthorizationData(login, password) {
         resolve(
           authorizationData.some(
             (item) => {
-              return item.login === login &&
-              item.password === password
+              return item.login === login && item.password === password
             }
           )
       );

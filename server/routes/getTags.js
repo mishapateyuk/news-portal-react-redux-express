@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   fs.readFile(
-    path.join(__dirname,'../storage/news.json'),
+    path.join(__dirname,'../storage/tags.json'),
     'utf8',
     (err, data) => {
       if (err) {
