@@ -1,5 +1,6 @@
 import {checkAuthorizationData} from '../models/authorizationModel';
 import {logInType, logOutType, authErrorType} from '../constants/constants.js';
+import {jsonAJAX} from '../services/AJAX.js';
 
 const logIn = (user) => (dispatch) => {
   localStorage.setItem('username', user);
@@ -16,10 +17,10 @@ const logOut = () => (dispatch) => {
   });
 };
 
-const auth = (login, pass) => (dispatch) => {
-    return checkAuthorizationData(login, pass)
+const auth = (login, password) => (dispatch) => {
+    return jsonAJAX('post', '/api/auth', JSON.stringify({login, password}))
         .then((response) => {
-            if (response) {
+            if (response === 'true') {
                 dispatch(logIn(login));
             } else {
                 dispatch(authError('Incorrect login or password'));
